@@ -1,91 +1,54 @@
 # 🟦 ACTIVIDAD 6 – Programación del Shell
 
-Guía completa para crear, ejecutar y probar los 3 ejercicios
+Guía completa para crear, ejecutar y probar los 3 ejercicios de shell.
 
 ---
 
 # 🔵 PASOS COMUNES PARA LOS 3 EJERCICIOS
 
-### 1️⃣ Crear el fichero del script
+### 1️⃣ Crear el script
 
-En la terminal:
-
-```
+```bash
 vi ejercicio1.sh
-```
-
-o
-
-```
 vi ejercicio2.sh
-```
-
-o
-
-```
 vi ejercicio3.sh
 ```
 
-Entra en modo edición pulsando:
+* Pulsa `i` para entrar en modo edición.
+* Pega el contenido del script.
+* Para guardar y salir: `ESC` → `:wq` → `ENTER`.
 
-```
-i
-```
+### 2️⃣ Dar permisos de ejecución
 
-Pega el contenido del script cuando tengas *CLARO* (Preferiblemente hacerlo cada uno por su cuenta, ya que lo vas a tener que hacer en el examen).
-Cuando acabes, para guardar y salir:
-
-```
-ESC
-:wq
-ENTER
+```bash
+chmod +x ejercicio1.sh ejercicio2.sh ejercicio3.sh
 ```
 
----
-
-### 2️⃣ Dar permisos de ejecución al script
-
-```
-chmod +x ejercicio1.sh
-chmod +x ejercicio2.sh
-chmod +x ejercicio3.sh
-```
-
-Solo se hace una vez.
-
----
+*(Solo una vez.)*
 
 ### 3️⃣ Ejecutar el script
 
-Recuerda:
-
-* Ejercicio 1 → requiere **2 o más argumentos**
-* Ejercicio 2 → requiere **3 o más argumentos**
-* Ejercicio 3 → requiere **3 o más argumentos**
+* **Ejercicio 1:** requiere 2 o más argumentos
+* **Ejercicio 2:** requiere 3 o más argumentos
+* **Ejercicio 3:** requiere 3 o más argumentos
 
 Ejemplos:
 
-```
+```bash
 ./ejercicio1.sh 3 7 10
 ./ejercicio2.sh 4 1 5 9
 ./ejercicio3.sh script.sh a script.sh
 ```
 
-Cada uno abrirá su propio menú.
+Cada script mostrará su menú correspondiente.
 
 ---
 
----
+# 🟢 EJERCICIO 1 — `ejercicio1.sh`
 
-# 🟢 EJERCICIO 1 — Cómo probar cada opción
+**Requiere 2 o más argumentos.**
 
-Ejemplo de ejecución:
-
-```
-./ejercicio1.sh 3 8 10
-```
-
-Verás:
+### Menú y opciones
 
 ```
 Menú [O] Ordenados
@@ -97,94 +60,66 @@ Menú [O] Ordenados
 Opción:
 ```
 
-Tú escribes la letra correspondiente.
-
----
-
-## ✔ O → Ordenados
+#### ✔ O → Ordenados
 
 Comprueba si los números están en orden ascendente.
 
-Ejemplo:
-
-```
+```bash
 ./ejercicio1.sh 1 2 5 10
+# Menú → O
+# Salida: Están ordenados ascendentemente
 ```
 
-Resultado:
+#### ✔ R → Resto
 
-```
-Están ordenados ascendentemente
-```
+Calcula el resto entre números consecutivos.
 
----
-
-## ✔ R → Resto
-
-Calcula el resto entre los números consecutivos.
-
-```
+```bash
 ./ejercicio1.sh 10 3 5
+# Menú → R
+# Salida:
+# Resto entre 10 y 3 = 1
+# Resto entre 3 y 5 = 3
 ```
 
-Salida:
+#### ✔ D → Directorio
 
-```
-Resto entre 10 y 3 = 1
-Resto entre 3 y 5 = 3
-```
+Crea enlaces en un directorio a los archivos ejecutables.
 
----
-
-## ✔ D → Directorio
-
-Pide un directorio existente.
-Por cada argumento del script:
-
-* si es ejecutable → crea un enlace en ese directorio
-* si no → muestra mensaje de error
-
-Ejemplo:
-
-```
-./ejercicio1.sh script1.sh script2.sh
+```bash
+./ejercicio1.sh scripts/script1.sh scripts/script2.sh
+# Menú → D
+# Directorio: directorios/dir1
 ```
 
----
-
-## ✔ L → Listado
+#### ✔ L → Listado
 
 Cuenta:
 
-* directorios
-* ficheros no vacíos
+* Directorios
+* Ficheros no vacíos
 
-Ejemplo:
-
+```bash
+./ejercicio1.sh directorios/dir1 archivos/archivo1.txt
+# Menú → L
+# Salida:
+# Número de directorios: 1
+# Número de ficheros no vacíos: 1
 ```
-./ejercicio1.sh carpeta archivo.txt
+
+#### ✔ C → Contar
+
+Guarda estadísticas (líneas, palabras, bytes) en un fichero nuevo.
+
+```bash
+./ejercicio1.sh archivos/archivo1.txt archivos/archivo2.txt archivos/archivo3.txt
+# Menú → C
+# Nombre del nuevo fichero: resumen.txt
 ```
 
----
+#### ✔ F → Fin
 
-## ✔ C → Contar
-
-Pide un **fichero nuevo**.
-
-Si existe → da error
-Si NO existe → guarda:
-
-* número de líneas
-* número de palabras
-* número de bytes
-
-de todos los argumentos.
-
----
-
-## ✔ F → Fin
-
-Termina y muestra:
+Termina el programa:
 
 ```
 Fin del programa
@@ -192,17 +127,11 @@ Fin del programa
 
 ---
 
----
+# 🟣 EJERCICIO 2 — `ejercicio2.sh`
 
-# 🟣 EJERCICIO 2 — Cómo probar cada opción
+**Requiere 3 o más argumentos numéricos.**
 
-Ejemplo de ejecución:
-
-```
-./ejercicio2.sh 4 1 5 9 13
-```
-
-Menú:
+### Menú y opciones
 
 ```
 Menú [S] Sucesión
@@ -212,73 +141,54 @@ Menú [S] Sucesión
 Opción:
 ```
 
----
+#### ✔ S → Sucesión
 
-## ✔ S → Sucesión
+Comprueba si cada término = anterior + primer argumento.
 
-Los argumentos deben cumplir:
-cada término = término anterior + primer argumento.
-
-Ejemplos que cumplen:
-
-```
-./ejercicio2.sh 4 1 5 9 13
-./ejercicio2.sh 3 2 5 8 11
+```bash
+./ejercicio2.sh 4 1 5 9
+# Menú → S
+# Salida: Cumple la sucesión
 ```
 
----
+#### ✔ C → Contar
 
-## ✔ C → Contar
+Cuenta ficheros en un directorio y guarda el número en `recuento`.
 
-Pide un directorio existente.
-Cuenta los ficheros dentro y guarda el número en un fichero llamado:
-
-```
-recuento
+```bash
+# Menú → C
+# Directorio: directorios/dir1
 ```
 
----
+#### ✔ P → Potencia
 
-## ✔ P → Potencia
+Eleva cada argumento a un exponente indicado por el usuario.
 
-Pide un número (exponente).
-Eleva cada argumento del script a ese exponente.
+```bash
+# Menú → P
+# Exponente: 3
+# Salida:
+# 4^3 = 64
+# 1^3 = 1
+# 5^3 = 125
+# 9^3 = 729
+```
 
-Ejemplo:
+#### ✔ F → Fin
+
+Termina el programa:
 
 ```
-./ejercicio2.sh 2 3 4
-```
-
-Si introduces exponente 3:
-
-Salida:
-
-```
-2^3 = 8
-3^3 = 27
-4^3 = 64
+Fin del programa
 ```
 
 ---
 
-## ✔ F → Fin
+# 🟠 EJERCICIO 3 — `ejercicio3.sh`
 
-Mismo comportamiento que en el ejercicio 1.
+**Requiere 3 o más argumentos.**
 
----
-
----
-
-# 🟠 EJERCICIO 3 — Cómo probar cada opción
-
-Ejemplo de ejecución:
-
-```
-./ejercicio3.sh script.sh a script.sh b c
-```
-
-Menú:
+### Menú y opciones
 
 ```
 Menú [P] Predecir
@@ -288,79 +198,54 @@ Menú [P] Predecir
 Opción:
 ```
 
----
+#### ✔ P → Predecir
 
-## ✔ P → Predecir
+Cuenta cuántas veces aparece el nombre del propio script.
 
-Cuenta cuántas veces aparece **el nombre del propio script** entre los argumentos.
-
-Ejemplo:
-
-```
+```bash
 ./ejercicio3.sh ejercicio3.sh x ejercicio3.sh y
+# Menú → P
+# Número mínimo de repeticiones: 2
+# Salida: Has acertado o superado el mínimo
 ```
 
-El programa te pedirá un número.
-Luego comprobará si acertaste o no.
+#### ✔ I → Inodo
 
----
+Cuenta ficheros con un inodo determinado en un directorio.
 
-## ✔ I → Inodo
-
-Pide:
-
-1️⃣ un número de inodo
-2️⃣ un directorio existente
-
-Muestra cuántos ficheros dentro del directorio tienen ese inodo.
-
-Para ver inodos puedes usar:
-
-```
-ls -i
+```bash
+# Menú → I
+# Número de inodo: <obtenido con ls -i>
+# Directorio: directorios/dir2
 ```
 
----
+#### ✔ T → Triangular
 
-## ✔ T → Triangular
+Comprueba la sucesión triangular: 1, 3, 6, 10, 15, …
 
-Comprueba si los números siguen la sucesión:
-
-1, 3, 6, 10, 15, 21 …
-
-Ejemplo correcto:
-
-```
+```bash
 ./ejercicio3.sh 1 3 6 10 15
+# Menú → T
+# Salida: Cumple la sucesión triangular
+```
+
+#### ✔ F → Fin
+
+Termina el programa:
+
+```
+Fin del programa
 ```
 
 ---
 
-## ✔ F → Fin
+# ✅ Códigos de los scripts
 
-Cierra el programa.
-
----
-
----
-
-## Códigos de cada script:
-
-# ✅ **EJERCICIO 1 — SCRIPT COMPLETO (`ejercicio1.sh`)**
+### **ejercicio1.sh**
 
 ```bash
 #!/bin/bash
-
-###############################################
-# EJERCICIO 1 — Requiere 2 o más argumentos
-###############################################
-
 [ $# -lt 2 ] && echo "Error de sintaxis" && exit 1
-
-
-###############################################
-# FUNCIONES
-###############################################
 
 ordenados() {
     prev=$1
@@ -375,7 +260,6 @@ ordenados() {
 directorio() {
     read -p "Introduce un directorio existente: " dir
     ls "$dir" >/dev/null 2>&1 || { echo "Ese directorio no existe"; return; }
-
     for arg in "$@"; do
         test -f "$arg" -a -x "$arg" && ln "$arg" "$dir" || \
             echo "No es un fichero o no puedo ejecutarlo"
@@ -385,13 +269,11 @@ directorio() {
 listado() {
     dirs=0
     files=0
-
     for arg in "$@"; do
         ( test -d "$arg" && dirs=$((dirs+1)) ) || \
         ( test -f "$arg" -a -s "$arg" && files=$((files+1)) ) || \
         echo "No es un fichero no vacío o directorio"
     done
-
     echo "Número de directorios: $dirs"
     echo "Número de ficheros no vacíos: $files"
 }
@@ -413,11 +295,6 @@ contar() {
     echo "Datos guardados en $fichero"
 }
 
-
-###############################################
-# PROGRAMA PRINCIPAL (MENÚ)
-###############################################
-
 while true; do
     echo "Menú [O] Ordenados"
     echo "[D] Directorio"
@@ -426,7 +303,6 @@ while true; do
     echo "[C] Contar"
     echo "[F] FIN"
     read -p "Opción: " op
-
     case "$op" in
         O|o) ordenados "$@" ;;
         D|d) directorio "$@" ;;
@@ -441,39 +317,27 @@ done
 
 ---
 
-# ✅ **EJERCICIO 2 — SCRIPT COMPLETO (`ejercicio2.sh`)**
+### **ejercicio2.sh**
 
 ```bash
 #!/bin/bash
-
-###############################################
-# EJERCICIO 2 — Requiere 3 o más argumentos
-###############################################
 [ $# -lt 3 ] && echo "Error de sintaxis" && exit 1
-
-
-###############################################
-# FUNCIONES
-###############################################
 
 sucesion() {
     base=$1
     prev=$2
     shift 2
-
     for n in "$@"; do
         esperado=$((prev + base))
         [ $n -ne $esperado ] && echo "No cumple la sucesión" && return
         prev=$n
     done
-
     echo "Cumple la sucesión"
 }
 
 contar() {
     read -p "Introduce un directorio existente: " dir
     ls "$dir" >/dev/null 2>&1 || { echo "Ese directorio no existe"; return; }
-
     ls "$dir" | wc -l > recuento
     echo "Guardado en 'recuento'"
 }
@@ -485,18 +349,12 @@ potencia() {
     done
 }
 
-
-###############################################
-# MENÚ
-###############################################
-
 while true; do
     echo "Menú [S] Sucesión"
     echo "[C] Contar"
     echo "[P] Potencia"
     echo "[F] FIN"
     read -p "Opción: " op
-
     case "$op" in
         S|s) sucesion "$@" ;;
         C|c) contar ;;
@@ -509,31 +367,20 @@ done
 
 ---
 
-# ✅ **EJERCICIO 3 — SCRIPT COMPLETO (`ejercicio3.sh`)**
+### **ejercicio3.sh**
 
 ```bash
 #!/bin/bash
-
-###############################################
-# EJERCICIO 3 — Requiere 3 o más argumentos
-###############################################
 [ $# -lt 3 ] && echo "Error de sintaxis" && exit 1
-
-
-###############################################
-# FUNCIONES
-###############################################
 
 predecir() {
     read -p "Número mínimo de repeticiones del nombre del script: " minimo
     count=0
     nombre=$(basename "$0")
-
     for arg in "$@"; do
         test "$arg" = "$nombre" && count=$((count+1))
         [ $count -gt $minimo ] && break
     done
-
     ( [ $count -ge $minimo ] && echo "Has acertado o superado el mínimo" ) || \
     echo "Te has quedado corto"
 }
@@ -541,9 +388,7 @@ predecir() {
 inodo() {
     read -p "Introduce inodo: " ino
     read -p "Introduce posible directorio: " dir
-
     ls "$dir" >/dev/null 2>&1 || { echo "Ese directorio no existe"; return; }
-
     find "$dir" -maxdepth 1 -inum "$ino" | wc -l
 }
 
@@ -557,18 +402,12 @@ triangular() {
     echo "Cumple la sucesión triangular"
 }
 
-
-###############################################
-# MENÚ
-###############################################
-
 while true; do
     echo "Menú [P] Predecir"
     echo "[I] Inodo"
     echo "[T] Triangular"
     echo "[F] FIN"
     read -p "Opción: " op
-
     case "$op" in
         P|p) predecir "$@" ;;
         I|i) inodo ;;
@@ -578,3 +417,150 @@ while true; do
     esac
 done
 ```
+
+---
+
+# 🌳 Estructura de directorios y archivos
+
+```
+Actividad6/
+├─ ejercicio1.sh
+├─ ejercicio2.sh
+├─ ejercicio3.sh
+├─ archivos/
+│   ├─ archivo1.txt
+│   ├─ archivo2.txt
+│   └─ archivo3.txt
+├─ scripts/
+│   ├─ script1.sh
+│   └─ script2.sh
+└─ directorios/
+    ├─ dir1/
+    │   ├─ a.txt
+    │   ├─ b.txt
+    │   └─ c.txt
+    └─ dir2/
+        ├─ fichero1.txt
+        └─ fichero2.txt
+```
+
+---
+
+## Contenido de los archivos
+
+### **archivos/archivo1.txt**
+
+```
+Hola, este es el archivo 1.
+Contiene varias líneas de ejemplo.
+Fin del archivo.
+```
+
+### **archivos/archivo2.txt**
+
+```
+Archivo 2.
+Otra línea de prueba.
+```
+
+### **archivos/archivo3.txt**
+
+```
+Archivo 3 con contenido diferente.
+Sólo dos líneas.
+```
+
+---
+
+### **scripts/script1.sh**
+
+```bash
+#!/bin/bash
+echo "Este es script1"
+```
+
+### **scripts/script2.sh**
+
+```bash
+#!/bin/bash
+echo "Este es script2"
+```
+
+Dar permisos de ejecución:
+
+```bash
+chmod +x scripts/script1.sh scripts/script2.sh
+```
+
+---
+
+### **directorios/dir1/**
+
+Archivos para contar y listar:
+
+* **a.txt**
+
+```
+Uno
+Dos
+Tres
+```
+
+* **b.txt**
+
+```
+Prueba
+De
+Archivos
+```
+
+* **c.txt**
+
+```
+Archivo final
+```
+
+---
+
+### **directorios/dir2/**
+
+Archivos para probar inodos:
+
+* **fichero1.txt**
+
+```
+Contenido para inodo
+```
+
+* **fichero2.txt**
+
+```
+Otro contenido
+```
+
+Ver inodos con:
+
+```bash
+ls -i directorios/dir2/
+```
+
+---
+
+# 💡 Consejos
+
+1. Siempre dar permisos de ejecución antes de probar los scripts:
+
+```bash
+chmod +x ejercicio1.sh ejercicio2.sh ejercicio3.sh
+```
+
+2. Para la opción **I → Inodo** en `ejercicio3.sh`:
+
+```bash
+ls -i directorios/dir2/fichero1.txt
+# Usar el número de inodo mostrado
+```
+
+3. Ejecutar todos los scripts desde el directorio `Actividad6/`.
+
+---
