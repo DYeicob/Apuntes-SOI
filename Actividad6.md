@@ -1,8 +1,3 @@
-Perfecto.
-Aquí tienes el **resumen completo de la Actividad 6**, **en formato visual, claro y directo**, sin formato markdown, pensado para que lo leas tú y puedas usarlo como guía paso a paso.
-
----
-
 # 🟦 ACTIVIDAD 6 – Programación del Shell
 
 Guía completa para crear, ejecutar y probar los 3 ejercicios
