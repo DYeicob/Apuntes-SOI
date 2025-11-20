@@ -32,7 +32,7 @@ Entra en modo edición pulsando:
 i
 ```
 
-Pega el contenido del script.
+Pega el contenido del script cuando tengas *CLARO* (Preferiblemente hacerlo cada uno por su cuenta, ya que lo vas a tener que hacer en el examen).
 Cuando acabes, para guardar y salir:
 
 ```
