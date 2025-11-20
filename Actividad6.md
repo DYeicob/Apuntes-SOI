@@ -578,7 +578,3 @@ while true; do
     esac
 done
 ```
-
----
-
-Solo dímelo.
