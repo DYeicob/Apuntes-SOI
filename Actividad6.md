@@ -544,13 +544,10 @@ ls -i directorios/dir2/
 
 ---
 # 💡 Consejos
-
 1. Para la opción **I → Inodo** en `ejercicio3.sh`:
-
 ```bash
 ls -i directorios/dir2/fichero1.txt
 # Usar el número de inodo mostrado
 ```
-
 2. Ejecutar todos los scripts desde el directorio `Actividad6/`.
 ---
