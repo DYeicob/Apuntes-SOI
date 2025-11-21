@@ -521,27 +521,19 @@ Archivo final
 ---
 
 ### **directorios/dir2/**
-
 Archivos para probar inodos:
-
 * **fichero1.txt**
-
 ```
 Contenido para inodo
 ```
-
 * **fichero2.txt**
-
 ```
 Otro contenido
 ```
-
 Ver inodos con:
-
 ```bash
 ls -i directorios/dir2/
 ```
-
 ---
 # 💡 Consejos
 1. Para la opción **I → Inodo** en `ejercicio3.sh`:
