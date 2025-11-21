@@ -455,71 +455,50 @@ Fin del archivo.
 ```
 
 ### **archivos/archivo2.txt**
-
 ```
 Archivo 2.
 Otra línea de prueba.
 ```
-
 ### **archivos/archivo3.txt**
-
 ```
 Archivo 3 con contenido diferente.
 Sólo dos líneas.
 ```
-
 ---
-
 ### **scripts/script1.sh**
-
 ```bash
 #!/bin/bash
 echo "Este es script1"
 ```
-
 ### **scripts/script2.sh**
-
 ```bash
 #!/bin/bash
 echo "Este es script2"
 ```
-
 Dar permisos de ejecución:
-
 ```bash
 chmod +x scripts/script1.sh scripts/script2.sh
 ```
-
 ---
-
 ### **directorios/dir1/**
-
 Archivos para contar y listar:
-
 * **a.txt**
-
 ```
 Uno
 Dos
 Tres
 ```
-
 * **b.txt**
-
 ```
 Prueba
 De
 Archivos
 ```
-
 * **c.txt**
-
 ```
 Archivo final
 ```
-
 ---
-
 ### **directorios/dir2/**
 Archivos para probar inodos:
 * **fichero1.txt**
