@@ -1,7 +1,5 @@
 # 🟦 ACTIVIDAD 6 – Programación del Shell
-
 Guía completa para crear, ejecutar y probar los 3 ejercicios de shell.
-
 ---
 
 # 🔵 PASOS COMUNES PARA LOS 3 EJERCICIOS
@@ -548,19 +546,13 @@ ls -i directorios/dir2/
 
 # 💡 Consejos
 
-1. Siempre dar permisos de ejecución antes de probar los scripts:
-
-```bash
-chmod +x ejercicio1.sh ejercicio2.sh ejercicio3.sh
-```
-
-2. Para la opción **I → Inodo** en `ejercicio3.sh`:
+1. Para la opción **I → Inodo** en `ejercicio3.sh`:
 
 ```bash
 ls -i directorios/dir2/fichero1.txt
 # Usar el número de inodo mostrado
 ```
 
-3. Ejecutar todos los scripts desde el directorio `Actividad6/`.
+2. Ejecutar todos los scripts desde el directorio `Actividad6/`.
 
 ---
